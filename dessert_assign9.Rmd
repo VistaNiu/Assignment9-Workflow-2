@@ -1,0 +1,26 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+Create an R project for this assignment.
+
+Inside this R project, place a .csv file that contains a column of your five favorite desserts, a column of the rating you’d give the dessert, and a third column containing roughly the quantity of said dessert you could eat.
+
+Create an R Markdown file in the R project that 1) uploads the data, 2) summarizes the three columns, and 3) visually represents the data in some way.
+
+Create your own repository of this Project on GitHub and paste a link to your repository here.
+
+Generate a readme file to help me figure out what you’ve done :)
+
+```{r setup, include=FALSE}
+dessert <- read.csv("/Users/apple/Downloads/Psy 4960 seminar/VistaNiu-R-assignment/Assign9.csv")
+
+summary(dessert$favorite.dessert)
+summary(dessert$rating.of.dessert)
+summary(dessert$number.of.dessert)
+
+library(ggplot2)
+ggplot(dessert, aes(number.of.dessert, rating.of.dessert, color = as.factor(favorite.dessert)))+geom_point()
+```
+
